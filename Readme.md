@@ -19,3 +19,11 @@ bower install firebase --save
 bower install angularfire --save
 bower install firebase-simple-login --save
 ```
+
+### Ionic:
+```
+ionic platform add ios
+ionic serve
+ionic build
+ionic run ios
+```
