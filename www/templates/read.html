@@ -1,0 +1,54 @@
+<ion-view title="Read">
+  <ion-nav-buttons side="right">
+    <button menu-toggle="right"class="button button-icon icon ion-navicon"></button>
+  </ion-nav-buttons>
+  <ion-content class="has-header">
+
+
+    <ion-list ng-show="isUserLogin()">
+
+      <ion-item ng-repeat="story in HackerNews" type="item-text-wrap" ng-click="open_inapp_browser(story.url, story.id)" style="background-color: #262626;color:#ebebeb;padding:0px;margin:0px;border:0px;">
+        <div class="row" style='
+              white-space: normal;
+              margin-bottom:20px;
+              padding:20px 20px;
+              font-size:14px;'>
+          {{story.title}}
+        </div>
+        <div class="row" style='
+              position:absolute;
+              bottom:0px;
+              font-size:10px;
+              padding:0px;
+              margin:0px;
+              padding-left:20px;
+              background-color: #383838;'>
+          posted by {{story.by}}
+        </div>
+      </ion-item>
+
+    </ion-list>
+
+
+
+
+
+    <!--  Login Screen -->
+    <div ng-show="!isUserLogin()">
+      <div class="list list-inset">
+        <label class="item item-input">
+          <input type="text" placeholder="First Name">
+        </label>
+        <label class="item item-input">
+          <input type="text" placeholder="Last Name">
+        </label>
+      </div>
+      <div class="row">
+        <button class="button button-full button-positive" ng-click="facebookLogin()">
+          Facebook Login
+        </button>
+      </div>
+    </div>
+
+  </ion-content>
+</ion-view>
